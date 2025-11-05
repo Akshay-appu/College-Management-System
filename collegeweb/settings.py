@@ -92,14 +92,15 @@ WSGI_APPLICATION = 'collegeweb.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': env('DATABASE_NAME', default='collegeweb'), 
-        'USER': env('DATABASE_USER', default='postgres'),        
-        'PASSWORD': env('DATABASE_PASSWORD', default='7561'),    
-        'HOST': env('DATABASE_HOST', default='localhost'),        
+        'NAME': env('DATABASE_NAME', default='college_db'),     # match .env file
+        'USER': env('DATABASE_USER', default='postgres'),
+        'PASSWORD': env('DATABASE_PASSWORD', default='7561'),
+        'HOST': env('DATABASE_HOST', default='127.0.0.1'),
+        'PORT': env('DATABASE_PORT', default=5432),             # corrected port
         'DISABLE_SERVER_SIDE_CURSORS': True,
-        'PORT': env('DATABASE_PORT', default=5433),             
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
